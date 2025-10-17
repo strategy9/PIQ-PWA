@@ -1,0 +1,909 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayerIQ PWA - Premium Patron Experience</title>
+    <meta name="description" content="PlayerIQ PWA - Transform your patron experience with a modern Progressive Web App">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#F7931A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PlayerIQ">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlBsYXllcklRIFBXQSBEZW1vIiwKICAic2hvcnRfbmFtZSI6ICJQbGF5ZXJJUSIEnd File<parameter name="content">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PlayerIQ PWA - Premium Patron Experience</title>
+        <meta name="description" content="PlayerIQ PWA - Transform your patron experience with a modern Progressive Web App">
+
+        <!-- PWA Meta Tags -->
+        <meta name="theme-color" content="#F7931A">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="PlayerIQ">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+            * {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --bg-primary: #0F0F10;
+                --bg-secondary: #1A1A1C;
+                --bg-tertiary: #242427;
+                --text-primary: #FFFFFF;
+                --text-secondary: #B8B8BC;
+                --text-tertiary: #787880;
+                --brand-gold: #F7931A;
+                --brand-gold-light: #FFB84D;
+                --border-color: #2A2A2D;
+            }
+
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Hero gradient */
+            .hero-gradient {
+                background: linear-gradient(135deg, #0F0F10 0%, #1A1A1C 100%);
+                position: relative;
+                overflow: hidden;
+            }
+
+                .hero-gradient::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-image: radial-gradient(circle at 20% 50%, rgba(247, 147, 26, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(247, 147, 26, 0.1) 0%, transparent 50%);
+                    pointer-events: none;
+                }
+
+            /* Feature card hover effect */
+            .feature-card {
+                background: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                padding: 32px;
+                transition: all 0.3s ease;
+            }
+
+                .feature-card:hover {
+                    transform: translateY(-4px);
+                    border-color: var(--brand-gold);
+                    box-shadow: 0 10px 40px rgba(247, 147, 26, 0.1);
+                }
+
+            /* Button styles */
+            .btn-gold {
+                background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%);
+                color: var(--bg-primary);
+                padding: 16px 32px;
+                border-radius: 12px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-block;
+                text-decoration: none;
+            }
+
+                .btn-gold:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
+                }
+
+            /* Section styling */
+            .section {
+                padding: 80px 0;
+            }
+
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+
+            /* Mockup Styles */
+            .mockup-frame {
+                width: 100%;
+                max-width: 390px;
+                height: 844px;
+                background: var(--bg-primary);
+                border: 1px solid var(--border-color);
+                border-radius: 24px;
+                overflow: hidden;
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            }
+
+            .screen {
+                display: none;
+                height: 100%;
+                background: var(--bg-primary);
+            }
+
+                .screen.active {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+            /* Input styles for mockup */
+            .input-field {
+                width: 100%;
+                padding: 16px;
+                background: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                color: var(--text-primary);
+                font-size: 16px;
+                transition: all 0.2s;
+            }
+
+                .input-field:focus {
+                    outline: none;
+                    border-color: var(--brand-gold);
+                    background: var(--bg-tertiary);
+                }
+
+                .input-field::placeholder {
+                    color: var(--text-tertiary);
+                }
+
+            .input-label {
+                display: block;
+                margin-bottom: 8px;
+                color: var(--text-secondary);
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 16px;
+                background: var(--brand-gold);
+                color: var(--bg-primary);
+                font-weight: 600;
+                font-size: 16px;
+                border-radius: 12px;
+                border: none;
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+                .btn-primary:hover {
+                    background: var(--brand-gold-light);
+                    transform: translateY(-1px);
+                }
+
+            .btn-secondary {
+                width: 100%;
+                padding: 16px;
+                background: var(--bg-secondary);
+                color: var(--text-primary);
+                font-weight: 600;
+                font-size: 16px;
+                border-radius: 12px;
+                border: 1px solid var(--border-color);
+                cursor: pointer;
+                transition: all 0.2s;
+            }
+
+                .btn-secondary:hover {
+                    background: var(--bg-tertiary);
+                    border-color: var(--brand-gold);
+                }
+
+            /* Navigation */
+            .nav-sticky {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                background: rgba(15, 15, 16, 0.95);
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            /* Benefit list */
+            .benefit-item {
+                display: flex;
+                align-items: start;
+                margin-bottom: 20px;
+            }
+
+            .benefit-icon {
+                width: 24px;
+                height: 24px;
+                background: var(--brand-gold);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 16px;
+                flex-shrink: 0;
+            }
+
+            /* Stats grid */
+            .stat-card {
+                background: var(--bg-secondary);
+                border: 1px solid var(--border-color);
+                border-radius: 16px;
+                padding: 24px;
+                text-align: center;
+            }
+
+            .stat-number {
+                font-size: 48px;
+                font-weight: 800;
+                color: var(--brand-gold);
+                margin-bottom: 8px;
+            }
+
+            /* Code block */
+            .code-block {
+                background: var(--bg-tertiary);
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                padding: 24px;
+                overflow-x: auto;
+            }
+
+                .code-block code {
+                    color: var(--text-secondary);
+                    font-family: 'Courier New', monospace;
+                    font-size: 14px;
+                }
+        </style>
+    </head>
+    <body style="background: #0F0F10; color: #FFFFFF;">
+        <!-- Navigation -->
+        <nav class="nav-sticky">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--bg-primary); margin-right: 12px;">IQ</div>
+                        <span style="font-size: 20px; font-weight: 700;">PlayerIQ PWA</span>
+                    </div>
+                    <div style="display: flex; gap: 32px; align-items: center;">
+                        <a href="#features" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Features</a>
+                        <a href="#benefits" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Benefits</a>
+                        <a href="#demo" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Demo</a>
+                        <a href="#integration" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;">Integration</a>
+                        <button onclick="installPWA()" class="btn-gold" style="padding: 10px 20px; font-size: 14px;">Install Demo</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-gradient" style="padding-top: 140px; padding-bottom: 80px; position: relative;">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <h1 style="font-size: 56px; font-weight: 900; line-height: 1.1; margin-bottom: 24px;">
+                            Transform Your Patron Experience
+                        </h1>
+                        <p style="font-size: 20px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px;">
+                            PlayerIQ PWA delivers a premium mobile experience that keeps patrons engaged, increases loyalty, and drives revenue through cutting-edge Progressive Web App technology.
+                        </p>
+                        <div style="display: flex; gap: 16px; margin-bottom: 48px;">
+                            <a href="#demo" class="btn-gold">View Live Demo</a>
+                            <button onclick="installPWA()" style="padding: 16px 32px; background: transparent; border: 2px solid var(--brand-gold); color: var(--brand-gold); border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+                                Install PWA
+                            </button>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                            <div>
+                                <div style="font-size: 32px; font-weight: 800; color: var(--brand-gold);">85%</div>
+                                <div style="font-size: 14px; color: var(--text-tertiary);">Mobile Engagement</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 32px; font-weight: 800; color: var(--brand-gold);">3x</div>
+                                <div style="font-size: 14px; color: var(--text-tertiary);">Session Duration</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 32px; font-weight: 800; color: var(--brand-gold);">40%</div>
+                                <div style="font-size: 14px; color: var(--text-tertiary);">Return Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <div style="position: relative;">
+                            <div style="width: 320px; height: 640px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 24px; padding: 20px; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);">
+                                <img src="data:image/svg+xml,%3Csvg width='280' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='280' height='600' fill='%231A1A1C'/%3E%3Crect x='20' y='20' width='240' height='100' rx='12' fill='%23242427'/%3E%3Ctext x='140' y='75' font-family='Inter' font-size='24' font-weight='bold' text-anchor='middle' fill='%23F7931A'%3EPlayerIQ%3C/text%3E%3Crect x='20' y='140' width='110' height='110' rx='12' fill='%23242427'/%3E%3Crect x='150' y='140' width='110' height='110' rx='12' fill='%23242427'/%3E%3Crect x='20' y='270' width='110' height='110' rx='12' fill='%23242427'/%3E%3Crect x='150' y='270' width='110' height='110' rx='12' fill='%23242427'/%3E%3Crect x='20' y='400' width='240' height='60' rx='12' fill='%23F7931A'/%3E%3Ctext x='140' y='435' font-family='Inter' font-size='16' font-weight='600' text-anchor='middle' fill='%230F0F10'%3ESign In%3C/text%3E%3C/svg%3E" alt="PlayerIQ PWA Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What is PWA Section -->
+        <section class="section" id="features">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">What is a Progressive Web App?</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                        A PWA combines the best of web and mobile apps, delivering native app experiences through the browser
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Install Like an App</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Add to home screen directly from the browser. No app store required. Updates automatically.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔔</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Push Notifications</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Engage patrons with timely updates about rewards, events, and personalized offers.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">⚡</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Offline Capable</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            Works without internet connection. Sync data when reconnected. Lightning fast performance.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🔐</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Secure & Private</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            HTTPS secured. JWT authentication. Encrypted data storage. PCI compliant architecture.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">🎯</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Cross-Platform</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            One codebase for iOS, Android, and desktop. Responsive design adapts to any screen.
+                        </p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div style="font-size: 48px; margin-bottom: 16px;">💰</div>
+                        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Cost Effective</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.6;">
+                            No app store fees. Lower development costs. Easier maintenance than native apps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="section" id="benefits" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 32px;">
+                            Benefits for Your Casino
+                        </h2>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Increased Patron Engagement</h4>
+                                <p style="color: var(--text-secondary); line-height: 1.6;">Push notifications drive 88% more engagement than traditional web apps</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Higher Retention Rates</h4>
+                                <p style="color: var(--text-secondary); line-height: 1.6;">Home screen presence increases return visits by 3x</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Seamless Integration</h4>
+                                <p style="color: var(--text-secondary); line-height: 1.6;">Works with existing PlayerIQ installation via secure APIs</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Multi-Tenant Architecture</h4>
+                                <p style="color: var(--text-secondary); line-height: 1.6;">One PWA, multiple casino brands with custom theming</p>
+                            </div>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Real-Time Updates</h4>
+                                <p style="color: var(--text-secondary); line-height: 1.6;">Instant updates without app store approval delays</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                            <div class="stat-card">
+                                <div class="stat-number">85%</div>
+                                <div style="color: var(--text-secondary);">Mobile Traffic</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">3.8x</div>
+                                <div style="color: var(--text-secondary);">Engagement Rate</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">52%</div>
+                                <div style="color: var(--text-secondary);">Cost Reduction</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">2.5x</div>
+                                <div style="color: var(--text-secondary);">Conversion Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Demo Section -->
+        <section class="section" id="demo">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">Interactive Demo</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary);">
+                        Experience the PlayerIQ PWA interface. Click through the screens to explore.
+                    </p>
+                </div>
+
+                <div style="display: flex; justify-content: center;">
+                    <div>
+                        <div style="margin-bottom: 24px; display: flex; gap: 12px; justify-content: center;">
+                            <button onclick="showScreen('landing')" style="padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; cursor: pointer;">Landing</button>
+                            <button onclick="showScreen('login')" style="padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; cursor: pointer;">Login</button>
+                            <button onclick="showScreen('register')" style="padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; cursor: pointer;">Register</button>
+                            <button onclick="showScreen('dashboard')" style="padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: 8px; cursor: pointer;">Dashboard</button>
+                        </div>
+
+                        <!-- Embedded Mockup -->
+                        <div class="mockup-frame">
+                            <!-- Status Bar -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; background: var(--bg-primary); border-bottom: 1px solid var(--border-color); color: var(--text-secondary); font-size: 14px;">
+                                <span>9:41 AM</span>
+                                <span>PlayerIQ</span>
+                                <span>100%</span>
+                            </div>
+
+                            <!-- Landing Screen -->
+                            <div id="landing" class="screen active">
+                                <div style="flex: 1; display: flex; flex-direction: column; padding: 32px 24px;">
+                                    <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                                        <div style="width: 80px; height: 80px; margin: 0 auto 24px; background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; font-weight: 800; color: var(--bg-primary);">IQ</div>
+                                        <h1 style="font-size: 32px; font-weight: 800; color: var(--text-primary); text-align: center; margin-bottom: 8px;">PlayerIQ</h1>
+                                        <p style="font-size: 16px; color: var(--text-secondary); text-align: center; margin-bottom: 48px;">Premium Gaming Experience</p>
+
+                                        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
+                                            <h3 style="font-size: 18px; font-weight: 600; color: var(--text-primary); margin-bottom: 16px;">Install as App</h3>
+                                            <ul style="margin-bottom: 24px;">
+                                                <li style="color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; display: flex; align-items: center;">
+                                                    <span style="color: #4ADE80; margin-right: 12px;">✓</span>
+                                                    Quick access from home screen
+                                                </li>
+                                                <li style="color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; display: flex; align-items: center;">
+                                                    <span style="color: #4ADE80; margin-right: 12px;">✓</span>
+                                                    Works offline
+                                                </li>
+                                                <li style="color: var(--text-secondary); font-size: 14px; display: flex; align-items: center;">
+                                                    <span style="color: #4ADE80; margin-right: 12px;">✓</span>
+                                                    Push notifications for rewards
+                                                </li>
+                                            </ul>
+                                            <button class="btn-primary">Install PlayerIQ</button>
+                                        </div>
+
+                                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+                                            <button onclick="showScreen('login')" class="btn-secondary">Sign In</button>
+                                            <button onclick="showScreen('register')" class="btn-secondary">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Login Screen -->
+                            <div id="login" class="screen">
+                                <div style="flex: 1; overflow-y: auto;">
+                                    <div style="padding: 32px 24px;">
+                                        <button onclick="showScreen('landing')" style="color: var(--text-tertiary); margin-bottom: 32px; font-size: 14px; background: none; border: none; cursor: pointer;">
+                                            ← Back
+                                        </button>
+
+                                        <h2 style="font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Welcome Back</h2>
+                                        <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 32px;">Sign in to your account</p>
+
+                                        <form>
+                                            <div style="margin-bottom: 20px;">
+                                                <label class="input-label">Email Address</label>
+                                                <input type="email" class="input-field" placeholder="player@example.com">
+                                            </div>
+
+                                            <div style="margin-bottom: 20px;">
+                                                <label class="input-label">Password</label>
+                                                <input type="password" class="input-field" placeholder="Enter your password">
+                                            </div>
+
+                                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                                                <div style="display: flex; align-items: center; gap: 12px;">
+                                                    <input type="checkbox" id="remember" checked style="width: 20px; height: 20px; accent-color: var(--brand-gold);">
+                                                    <label for="remember" style="color: var(--text-secondary); font-size: 14px;">Remember me</label>
+                                                </div>
+                                                <a href="#" style="color: var(--brand-gold); font-size: 14px; text-decoration: none;">Forgot password?</a>
+                                            </div>
+
+                                            <button type="button" onclick="showScreen('dashboard')" class="btn-primary" style="margin-bottom: 24px;">Sign In</button>
+
+                                            <p style="text-align: center; color: var(--text-secondary); font-size: 14px;">
+                                                Don't have an account?
+                                                <a href="#" onclick="showScreen('register'); return false;" style="color: var(--brand-gold); text-decoration: none;">Register</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Register Screen -->
+                            <div id="register" class="screen">
+                                <div style="flex: 1; overflow-y: auto;">
+                                    <div style="padding: 32px 24px;">
+                                        <button onclick="showScreen('landing')" style="color: var(--text-tertiary); margin-bottom: 32px; font-size: 14px; background: none; border: none; cursor: pointer;">
+                                            ← Back
+                                        </button>
+
+                                        <h2 style="font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Create Account</h2>
+                                        <p style="font-size: 16px; color: var(--text-secondary); margin-bottom: 32px;">Join PlayerIQ today</p>
+
+                                        <form>
+                                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 20px;">
+                                                <div>
+                                                    <label class="input-label">First Name</label>
+                                                    <input type="text" class="input-field" placeholder="John">
+                                                </div>
+                                                <div>
+                                                    <label class="input-label">Last Name</label>
+                                                    <input type="text" class="input-field" placeholder="Doe">
+                                                </div>
+                                            </div>
+
+                                            <div style="margin-bottom: 20px;">
+                                                <label class="input-label">Email Address</label>
+                                                <input type="email" class="input-field" placeholder="player@example.com">
+                                            </div>
+
+                                            <div style="margin-bottom: 20px;">
+                                                <label class="input-label">Password</label>
+                                                <input type="password" class="input-field" placeholder="Minimum 8 characters">
+                                            </div>
+
+                                            <button type="button" onclick="showScreen('dashboard')" class="btn-primary" style="margin-bottom: 24px;">Create Account</button>
+
+                                            <p style="text-align: center; color: var(--text-secondary); font-size: 14px;">
+                                                Already have an account?
+                                                <a href="#" onclick="showScreen('login'); return false;" style="color: var(--brand-gold); text-decoration: none;">Sign In</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dashboard Screen -->
+                            <div id="dashboard" class="screen">
+                                <div style="flex: 1; display: flex; flex-direction: column;">
+                                    <!-- Header -->
+                                    <div style="padding: 24px;">
+                                        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px;">
+                                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 20px;">
+                                                <div>
+                                                    <p style="font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Welcome back</p>
+                                                    <h2 style="font-size: 24px; font-weight: 700; color: var(--text-primary);">John Doe</h2>
+                                                </div>
+                                                <span style="background: var(--brand-gold); color: var(--bg-primary); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">GOLD</span>
+                                            </div>
+
+                                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px;">
+                                                <div style="text-align: center; padding: 16px 8px; border-right: 1px solid var(--border-color);">
+                                                    <div style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">12,450</div>
+                                                    <div style="font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Points</div>
+                                                </div>
+                                                <div style="text-align: center; padding: 16px 8px; border-right: 1px solid var(--border-color);">
+                                                    <div style="font-size: 24px; font-weight: 700; color: var(--brand-gold); margin-bottom: 4px;">$2,100</div>
+                                                    <div style="font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Credits</div>
+                                                </div>
+                                                <div style="text-align: center; padding: 16px 8px;">
+                                                    <div style="font-size: 24px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px;">147</div>
+                                                    <div style="font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px;">Visits</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content -->
+                                    <div style="flex: 1; overflow-y: auto; padding: 0 24px 24px;">
+                                        <h3 style="font-size: 14px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Quick Actions</h3>
+
+                                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 32px;">
+                                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; cursor: pointer;">
+                                                <div style="font-size: 32px; margin-bottom: 8px;">🎮</div>
+                                                <div style="font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Join Queue</div>
+                                                <div style="font-size: 12px; color: var(--text-tertiary);">2 min wait</div>
+                                            </div>
+                                            <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 20px; text-align: center; cursor: pointer;">
+                                                <div style="font-size: 32px; margin-bottom: 8px;">🏆</div>
+                                                <div style="font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">Contests</div>
+                                                <div style="font-size: 12px; color: var(--text-tertiary);">3 active</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Navigation -->
+                                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+                                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; color: var(--brand-gold);">
+                                            <svg style="width: 24px; height: 24px; margin-bottom: 4px;" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                                            </svg>
+                                            <span style="font-size: 12px; font-weight: 500;">Home</span>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; color: var(--text-tertiary);">
+                                            <svg style="width: 24px; height: 24px; margin-bottom: 4px;" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 1 1 0 000 2H6a2 2 0 00-2 2v6a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-1a1 1 0 100-2h1a4 4 0 014 4v6a4 4 0 01-4 4H6a4 4 0 01-4-4V7a4 4 0 014-4z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span style="font-size: 12px; font-weight: 500;">Activity</span>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; color: var(--text-tertiary);">
+                                            <svg style="width: 24px; height: 24px; margin-bottom: 4px;" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                                <path d="M9 5a1 1 0 11-2 0 1 1 0 012 0zM13 5a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 11-2 0 1 1 0 012 0zM13 9a1 1 0 11-2 0 1 1 0 012 0z"></path>
+                                            </svg>
+                                            <span style="font-size: 12px; font-weight: 500;">Rewards</span>
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; color: var(--text-tertiary);">
+                                            <svg style="width: 24px; height: 24px; margin-bottom: 4px;" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path>
+                                            </svg>
+                                            <span style="font-size: 12px; font-weight: 500;">Profile</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="section" id="integration" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 64px;">
+                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">PlayerIQ Integration</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                        Seamlessly connects with your existing PlayerIQ installation through secure JWT-authenticated APIs
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                    <div>
+                        <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Architecture Overview</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">1</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 4px;">React + TypeScript Frontend</strong>
+                                    <span style="color: var(--text-secondary);">Modern, type-safe, component-based architecture</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">2</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 4px;">JWT Authentication</strong>
+                                    <span style="color: var(--text-secondary);">Secure patron authentication with refresh tokens</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">3</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 4px;">RESTful API Integration</strong>
+                                    <span style="color: var(--text-secondary);">Connects to existing PlayerIQ Swagger endpoints</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">4</span>
+                                <div>
+                                    <strong style="display: block; margin-bottom: 4px;">Azure Hosting</strong>
+                                    <span style="color: var(--text-secondary);">Scalable cloud infrastructure with CDN</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="code-block">
+                            <code>
+                                // API Integration Example<br><br>
+
+                                const auth = {<br>
+                                &nbsp;&nbsp;login: '/api/auth/patron/login',<br>
+                                &nbsp;&nbsp;refresh: '/api/auth/patron/refresh',<br>
+                                &nbsp;&nbsp;register: '/api/auth/patron/register'<br>
+                                };<br><br>
+
+                                const patron = {<br>
+                                &nbsp;&nbsp;profile: '/api/patron/profile',<br>
+                                &nbsp;&nbsp;points: '/api/patron/points',<br>
+                                &nbsp;&nbsp;rewards: '/api/patron/rewards'<br>
+                                };<br><br>
+
+                                // JWT Token Management<br>
+                                const token = await api.login(credentials);<br>
+                                secureStorage.set('token', token);
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 48px; font-weight: 900; margin-bottom: 24px;">
+                    Ready to Transform Your Patron Experience?
+                </h2>
+                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Join the future of casino technology with PlayerIQ PWA. Increase engagement, boost loyalty, and drive revenue.
+                </p>
+                <div style="display: flex; gap: 24px; justify-content: center;">
+                    <button onclick="installPWA()" class="btn-gold" style="padding: 20px 40px; font-size: 18px;">
+                        Install Demo PWA
+                    </button>
+                    <a href="mailto:contact@playeriq.com" style="padding: 20px 40px; background: transparent; border: 2px solid var(--brand-gold); color: var(--brand-gold); border-radius: 12px; font-weight: 600; font-size: 18px; text-decoration: none; display: inline-block; transition: all 0.3s;">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="background: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 40px 0;">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--bg-primary); margin-right: 12px; font-size: 16px;">IQ</div>
+                            <span style="font-size: 18px; font-weight: 700;">PlayerIQ PWA</span>
+                        </div>
+                        <p style="color: var(--text-tertiary); font-size: 14px;">© 2024 PlayerIQ. All rights reserved.</p>
+                    </div>
+                    <div style="display: flex; gap: 24px;">
+                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a>
+                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">API Reference</a>
+                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Support</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- PWA Service Worker Registration -->
+        <script>
+        // Screen navigation for demo
+        function showScreen(screenId) {
+            document.querySelectorAll('.screen').forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // PWA Installation
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('PWA installed');
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('To install: \n\nChrome/Edge: Click the install icon in the address bar\n\nSafari: Tap Share → Add to Home Screen\n\nOr this PWA may already be installed!');
+            }
+        }
+
+        // Register service worker for PWA functionality
+        if ('serviceWorker' in navigator) {
+            // Create inline service worker
+            const swContent = `
+                const CACHE_NAME = 'playeriq-pwa-v1';
+                const urlsToCache = [
+                    '/',
+                    '/index.html'
+                ];
+
+                self.addEventListener('install', event => {
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then(cache => cache.addAll(urlsToCache))
+                    );
+                });
+
+                self.addEventListener('fetch', event => {
+                    event.respondWith(
+                        caches.match(event.request)
+                            .then(response => response || fetch(event.request))
+                    );
+                });
+            `;
+
+            const blob = new Blob([swContent], { type: 'application/javascript' });
+            const swUrl = URL.createObjectURL(blob);
+
+            navigator.serviceWorker.register(swUrl).then(registration => {
+                console.log('ServiceWorker registered');
+            }).catch(error => {
+                console.log('ServiceWorker registration failed:', error);
+            });
+        }
+        </script>
+
+        <!-- PWA Manifest -->
+        <script>
+        const manifestData = {
+            "name": "PlayerIQ PWA Demo",
+            "short_name": "PlayerIQ",
+            "description": "Premium casino patron experience",
+            "start_url": "/",
+            "display": "standalone",
+            "background_color": "#0F0F10",
+            "theme_color": "#F7931A",
+            "orientation": "portrait",
+            "icons": [
+                {
+                    "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGrklEQVR4nO3df6zVdR3H8ec593KBy4WL/BBEfohAgqigpaXWpuZP0pxrtWqurVpr1Vqt1Zq11h9t/VFrrdZqrVbLtVqtLM2fpaKilqKiqICIgIiA/Lpc7uVy7znn2x8XNJTLPed7vt/v53zO5/XY+Iuv7/N9z/2+z/ec7/d8P18QEREREREREREREREREREREZFBqkAApAI4BTgPmAuMBMYAQ4s8thXYAmwBlgGvAS9jvduDd0pKKgAycCOA64F5wJmljDCEXwKNP4FXgCeAx7HeHaWMJ9VDAaDBTQSWABcEGq8ZeBC403o3B+qRgBQAGtw1wF3AkJA9fetYD1xrvVsStkusqOTf1OFKvyQEn21vgQHcZlweqkOCUgDocJOAv0f8IQ5xq/VuaqwOMaWTYDrcncT74Qc4yLnsE4ypKYk+A9DhGoBNxP/hf0MT7ljs96E7YkeX8JxwFzb88AMcCvycdLUHX0YJ0wlAh6sH7ok09LxCR0NHewvtHe20trbS3LyLlpYWGhsbGT16NK7R4Zwj/3w4LYNvBPBnoH1o//2FnupfqCmlZ4Dk3QJMGkiAtY9AzmUpGwrQ7UbT7qag5b0JrEVLG5pBG0FhNZUlzfcq4B4gO9DnLlpqeSRCu8FMf28wMLRPP+AJl2U/7yAFa6kBLgF+F3vQpd+/RPNRxn+5/QNHK8HJi6qjdgLH4xJuhtU7kJo+2o8ALgKeSjQHyXoXuBR4PekxYsEfBnA9btvDJPw9OMhRSQ+SoFsBFhfhyF9Q3F5fRhwqAJMBl/QQqjBVn4HJuAiI/yZOoJeBp4BFQJPppOu5EhOFBYCGKGFjzJ8EfBo3vSQ2VjdjeRPDF+iwDuBe4Afj8JVrSfJyO4K0H6Q5EwEXZIeVFTYxuTFovzCJyXneKdwP4pZFbAXqR5a+7lQKTPcBxRYCxY5v/aSSzMqxzH8Av8V+nVy9bxhE6/vJq9QfSGHQQyDrXWeW9e6b3Wfr/QGS5KSW6wnY7x6xMT0DNnFj8TK0tLzJ+vUfsX37Lrq6Mg/2MRw/fgRHHXUoJ588nbq67TjcZFaP2OiU9CEgJUOqxdq1HzN//lM8+eQy2tqS9/jUqaO56qpTueCCy4F/J79x0OQcNf8vE8iGC/D445C1FsukH8vvf/MKq1fvCjJ+N1p73X1AiDJWIRxWlwCNGzfxpS89zC23PMbu3eE3ojnyyGF88Ytns2DBD4ElQBzb8oTBgS1nQs+0tNvCNQLZBFzJ9v3bNg/gDEBwi/HL/SfWu44DX9y/eI8++hZ33PEYe/ZE/9W2oSHL5z9/Ajfd9Hng+xTZnzkgq1uAtL5xSwEQpQBYjbsH6HNReCkBli3bzEMPLaG5OZ0Zs2O+NJbrr59Lff3L2AT3VU7Fx3RRGxY3vQguGGjYwgN+s3IRAHnz5++hvb13f+v2duafs5KdTJ2zlaenTaJu4+YweVpaOli5chtnnDGNf/3rYw48h7b8Gzc9T4C7DQjJgRuSdPb8IUD+0BZynD9wCz/91cvcddlnmN6/y7MBGQrUmY/X7h4MQBNT0e5HJYBALnLfb5v+hCy7djHjk8bOHMvJ/kxJz7/44gb+8pc3eOGFDzFhCh5nPl57JzCBj/O/l6/2C3MBCOzIYz7i7C/Opi5gB4DNWB4H7hs5kr8yFOLdAOxz3AWsXT6B9oMGdlnS1JTj0Ue/xre+dS8zZrweduwD2WrbgGqXAKj/RqSAi2HM9BZOmf8kGzY00R70eJYGXMJD0g9jzgLaXV8+T05lJRdSx4X0z8vcc89i/vz7p2lv78/B2FZ6HMj5WLZZzxrcd/kQsOCGjtzJzG+dwviFO8hYy7F7mzr74X1eCrzOqtc2cvbZh4f5O9XqwMBCmqAn9hHoKuBGoBa+JodXy1mciGXMQNIRy1bAsuLlt3n+ub+zbp29K0rRTKh/gqgBiOFggjOA7+JGlddJvfhkrYoZtlVJlwAVxgKziGdJ9Vr9jFc3BcCAfsBngRuA6Uhg2iMgjnoOGQf8EneLJqJfVKGsrr7VT1/3bKn2RBB0DUC1HYFqSkWoKo30RpskSK7VT89lgdIAjJxj5dU/xSwDbFXQYiOJ5E7E3YaWv9a2pKOQW8tZy3YsOy3V/a1vT1oCQHfAXdtU0B5+OW9aBSHZ2ZSdJzgRaSUd3cWx2gxKRERERERERERERERERERERERERKrnfydq/F9w3irlAAAAAElFTkSuQmCC",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        };
+
+        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+        const manifestUrl = URL.createObjectURL(manifestBlob);
+
+        const link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = manifestUrl;
+        document.head.appendChild(link);
+        </script>
+    </body>
+</html>
