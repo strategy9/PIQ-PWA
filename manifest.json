@@ -1,0 +1,19 @@
+{
+  "name": "PlayerIQ - Premium Gaming Experience",
+  "short_name": "PlayerIQ",
+  "description": "Your VIP casino experience",
+  "start_url": "/app.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F0F10",
+  "theme_color": "#F7931A",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMTUvMjTlVw4mAAAGFElEQVR4nO3df4jcdR3H8c/3dnc3u7vZ3W4326xW07SfZlZaVlRUVFRUVFRU/FH0R0VFRUVF0R/9UVRUVFRU/BEVFRUVFRUVFRUVlZVZadpPTTPNzMztu73b3e3t7s18+8NuL3P3dr/f7/f7+Xw+3/f79YAQwt33837P3fd9v9/v5/P5fEFERERERERERERERERERKqJAYEG4FTgfOBcYBowA5hU5LktwBZgM7ASeB14Fetd",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
