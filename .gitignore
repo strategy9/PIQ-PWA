@@ -52,3 +52,9 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/.vs/PIQ-PWA/CopilotIndices/17.13.449.12402
+/.vs/PIQ-PWA/config
+/.vs/PIQ-PWA/FileContentIndex
+/.vs/PIQ-PWA/v17
+*.sqlite
+/.vs/VSWorkspaceState.json
