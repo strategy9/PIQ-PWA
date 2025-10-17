@@ -11,9 +11,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="PlayerIQ">
-
+    <link rel="icon" type="image/png" href="./icons/icon-192.png">
+    <link rel="shortcut icon" type="image/png" href="./icons/icon-192.png">
     <!-- PWA Manifest -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlBsYXllcklRIFBXQSBEZW1vIiwKICAic2hvcnRfbmFtZSI6ICJQbGF5ZXJJUSIEnd File<parameter name="content">
+    <link rel="manifest" href="./manifest.json">
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -811,99 +812,70 @@
 
         <!-- PWA Service Worker Registration -->
         <script>
-        // Screen navigation for demo
-        function showScreen(screenId) {
-            document.querySelectorAll('.screen').forEach(screen => {
-                screen.classList.remove('active');
-            });
-            document.getElementById(screenId).classList.add('active');
-        }
-
-        // PWA Installation
-        let deferredPrompt;
-
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-        });
-
-        function installPWA() {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        console.log('PWA installed');
-                    }
-                    deferredPrompt = null;
+            // Screen navigation for demo
+            function showScreen(screenId) {
+                document.querySelectorAll('.screen').forEach(screen => {
+                    screen.classList.remove('active');
                 });
-            } else {
-                alert('To install: \n\nChrome/Edge: Click the install icon in the address bar\n\nSafari: Tap Share → Add to Home Screen\n\nOr this PWA may already be installed!');
+                document.getElementById(screenId).classList.add('active');
             }
-        }
 
-        // Register service worker for PWA functionality
-        if ('serviceWorker' in navigator) {
-            // Create inline service worker
-            const swContent = `
-                const CACHE_NAME = 'playeriq-pwa-v1';
-                const urlsToCache = [
-                    '/',
-                    '/index.html'
-                ];
+            // PWA Installation
+            let deferredPrompt;
 
-                self.addEventListener('install', event => {
-                    event.waitUntil(
-                        caches.open(CACHE_NAME)
-                            .then(cache => cache.addAll(urlsToCache))
-                    );
-                });
-
-                self.addEventListener('fetch', event => {
-                    event.respondWith(
-                        caches.match(event.request)
-                            .then(response => response || fetch(event.request))
-                    );
-                });
-            `;
-
-            const blob = new Blob([swContent], { type: 'application/javascript' });
-            const swUrl = URL.createObjectURL(blob);
-
-            navigator.serviceWorker.register(swUrl).then(registration => {
-                console.log('ServiceWorker registered');
-            }).catch(error => {
-                console.log('ServiceWorker registration failed:', error);
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPrompt = e;
             });
-        }
+
+            function installPWA() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then((choiceResult) => {
+                        if (choiceResult.outcome === 'accepted') {
+                            console.log('PWA installed');
+                        }
+                        deferredPrompt = null;
+                    });
+                } else {
+                    alert('To install: \n\nChrome/Edge: Click the install icon in the address bar\n\nSafari: Tap Share → Add to Home Screen\n\nOr this PWA may already be installed!');
+                }
+            }
+
+            // Register service worker for PWA functionality
+            if ('serviceWorker' in navigator) {
+                // Don't register SW on the index page, only on app.html
+                console.log('Service Worker available but not registered on presentation page');
+            }
         </script>
 
         <!-- PWA Manifest -->
         <script>
-        const manifestData = {
-            "name": "PlayerIQ PWA Demo",
-            "short_name": "PlayerIQ",
-            "description": "Premium casino patron experience",
-            "start_url": "/",
-            "display": "standalone",
-            "background_color": "#0F0F10",
-            "theme_color": "#F7931A",
-            "orientation": "portrait",
-            "icons": [
-                {
-                    "src": "data:image/png;base64,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",
-                    "sizes": "192x192",
-                    "type": "image/png"
-                }
-            ]
-        };
+            const manifestData = {
+                "name": "PlayerIQ PWA Demo",
+                "short_name": "PlayerIQ",
+                "description": "Premium casino patron experience",
+                "start_url": "/",
+                "display": "standalone",
+                "background_color": "#0F0F10",
+                "theme_color": "#F7931A",
+                "orientation": "portrait",
+                "icons": [
+                    {
+                        "src": "data:image/png;base64,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",
+                        "sizes": "192x192",
+                        "type": "image/png"
+                    }
+                ]
+            };
 
-        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
-        const manifestUrl = URL.createObjectURL(manifestBlob);
+            const manifestBlob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+            const manifestUrl = URL.createObjectURL(manifestBlob);
 
-        const link = document.createElement('link');
-        link.rel = 'manifest';
-        link.href = manifestUrl;
-        document.head.appendChild(link);
+            const link = document.createElement('link');
+            link.rel = 'manifest';
+            link.href = manifestUrl;
+            document.head.appendChild(link);
         </script>
     </body>
 </html>
