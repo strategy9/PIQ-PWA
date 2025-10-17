@@ -698,184 +698,278 @@
             </div>
         </section>
 
-        <!-- Integration Section -->
-        <section class="section" id="integration" style="background: var(--bg-secondary);">
+        <!-- Installation Instructions Section -->
+        <section class="section" id="install-guide" style="background: var(--bg-secondary);">
             <div class="container">
                 <div style="text-align: center; margin-bottom: 64px;">
-                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">PlayerIQ Integration</h2>
-                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
-                        Seamlessly connects with your existing PlayerIQ installation through secure JWT-authenticated APIs
+                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">How to Install PlayerIQ PWA</h2>
+                    <p style="font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                        Install directly from your browser - no app store needed. Works on iPhone, Android, and desktop.
                     </p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
-                    <div>
-                        <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Architecture Overview</h3>
-                        <ul style="list-style: none; padding: 0;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-bottom: 48px;">
+                    <!-- iOS Instructions -->
+                    <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 16px; padding: 32px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 24px;">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #007AFF, #5AC8FA); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                                <span style="font-size: 24px;">🍎</span>
+                            </div>
+                            <h3 style="font-size: 24px; font-weight: 700; color: var(--text-primary);">iPhone / iPad</h3>
+                        </div>
+
+                        <ol style="list-style: none; padding: 0; margin: 0;">
                             <li style="margin-bottom: 20px; display: flex; align-items: start;">
-                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">1</span>
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">1</span>
                                 <div>
-                                    <strong style="display: block; margin-bottom: 4px;">React + TypeScript Frontend</strong>
-                                    <span style="color: var(--text-secondary);">Modern, type-safe, component-based architecture</span>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Open in Safari</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Navigate to app.html in Safari browser (required for iOS)</span>
                                 </div>
                             </li>
                             <li style="margin-bottom: 20px; display: flex; align-items: start;">
-                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">2</span>
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">2</span>
                                 <div>
-                                    <strong style="display: block; margin-bottom: 4px;">JWT Authentication</strong>
-                                    <span style="color: var(--text-secondary);">Secure patron authentication with refresh tokens</span>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Tap Share Button</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Look for the share icon <span style="display: inline-block; transform: scale(1.2); margin: 0 4px;">⬆️</span> at the bottom of Safari</span>
                                 </div>
                             </li>
                             <li style="margin-bottom: 20px; display: flex; align-items: start;">
-                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">3</span>
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">3</span>
                                 <div>
-                                    <strong style="display: block; margin-bottom: 4px;">RESTful API Integration</strong>
-                                    <span style="color: var(--text-secondary);">Connects to existing PlayerIQ Swagger endpoints</span>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Add to Home Screen</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Scroll down and tap "Add to Home Screen" <span style="margin-left: 4px;">➕</span></span>
                                 </div>
                             </li>
-                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
-                                <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">4</span>
+                            <li style="display: flex; align-items: start;">
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">4</span>
                                 <div>
-                                    <strong style="display: block; margin-bottom: 4px;">Azure Hosting</strong>
-                                    <span style="color: var(--text-secondary);">Scalable cloud infrastructure with CDN</span>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Name & Add</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Customize the name and tap "Add"</span>
                                 </div>
                             </li>
-                        </ul>
-                    </div>
+                        </ol>
 
-                    <div>
-                        <div class="code-block">
-                            <code>
-                                // API Integration Example<br><br>
-
-                                const auth = {<br>
-                                &nbsp;&nbsp;login: '/api/auth/patron/login',<br>
-                                &nbsp;&nbsp;refresh: '/api/auth/patron/refresh',<br>
-                                &nbsp;&nbsp;register: '/api/auth/patron/register'<br>
-                                };<br><br>
-
-                                const patron = {<br>
-                                &nbsp;&nbsp;profile: '/api/patron/profile',<br>
-                                &nbsp;&nbsp;points: '/api/patron/points',<br>
-                                &nbsp;&nbsp;rewards: '/api/patron/rewards'<br>
-                                };<br><br>
-
-                                // JWT Token Management<br>
-                                const token = await api.login(credentials);<br>
-                                secureStorage.set('token', token);
-                            </code>
+                        <div style="background: var(--bg-tertiary); border-left: 3px solid var(--brand-gold); padding: 12px 16px; margin-top: 24px; border-radius: 4px;">
+                            <p style="font-size: 12px; color: var(--text-secondary); margin: 0;">
+                                <strong style="color: var(--brand-gold);">Pro Tip:</strong> The app icon will appear on your home screen and work like a native app!
+                            </p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- CTA Section -->
-        <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
-            <div class="container" style="text-align: center;">
-                <h2 style="font-size: 48px; font-weight: 900; margin-bottom: 24px;">
-                    Ready to Transform Your Patron Experience?
-                </h2>
-                <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    Join the future of casino technology with PlayerIQ PWA. Increase engagement, boost loyalty, and drive revenue.
-                </p>
-                <div style="display: flex; gap: 24px; justify-content: center;">
-                    <button onclick="window.location.href='app.html'" class="btn-gold" style="padding: 20px 40px; font-size: 18px;">
-                        Install Demo PWA
-                    </button>
-                    <a href="mailto:contact@playeriq.com" style="padding: 20px 40px; background: transparent; border: 2px solid var(--brand-gold); color: var(--brand-gold); border-radius: 12px; font-weight: 600; font-size: 18px; text-decoration: none; display: inline-block; transition: all 0.3s;">
-                        Contact Sales
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer style="background: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 40px 0;">
-            <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--bg-primary); margin-right: 12px; font-size: 16px;">IQ</div>
-                            <span style="font-size: 18px; font-weight: 700;">PlayerIQ PWA</span>
+                    <!-- Android Instructions -->
+                    <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 16px; padding: 32px;">
+                        <div style="display: flex; align-items: center; margin-bottom: 24px;">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #34A853, #4285F4); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 16px;">
+                                <span style="font-size: 24px;">🤖</span>
+                            </div>
+                            <h3 style="font-size: 24px; font-weight: 700; color: var(--text-primary);">Android</h3>
                         </div>
-                        <p style="color: var(--text-tertiary); font-size: 14px;">© 2024 PlayerIQ. All rights reserved.</p>
-                    </div>
-                    <div style="display: flex; gap: 24px;">
-                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a>
-                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">API Reference</a>
-                        <a href="#" style="color: var(--text-secondary); text-decoration: none;">Support</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
 
-        <!-- PWA Service Worker Registration -->
-        <script>
-            // Screen navigation for demo
-            function showScreen(screenId) {
-                document.querySelectorAll('.screen').forEach(screen => {
-                    screen.classList.remove('active');
-                });
-                document.getElementById(screenId).classList.add('active');
-            }
+                        <ol style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">1</span>
+                                <div>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Open in Chrome</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Navigate to app.html in Chrome browser</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">2</span>
+                                <div>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Look for Install Banner</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Chrome will show "Add PlayerIQ to Home screen" banner</span>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">3</span>
+                                <div>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Or Use Menu</strong>
+                                    <span style="color: var(--text-secondary); font-size: 14px;">Tap the three dots menu ⋮ → "Install app" or "Add to Home screen"</span>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: start;">
+                                <span style="background: var(--brand-gold); color: var(--bg-primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 16px; flex-shrink: 0;">4</span>
+                                <div>
+                                    <strong style="display: block; color: var(--text-primary); margin-bottom: 4px;">Confirm Installation</strong>
 
-            // PWA Installation
-            let deferredPrompt;
+                                    <!-- Integration Section -->
+                                    <section class="section" id="integration" style="background: var(--bg-secondary);">
+                                        <div class="container">
+                                            <div style="text-align: center; margin-bottom: 64px;">
+                                                <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 16px;">PlayerIQ Integration</h2>
+                                                <p style="font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+                                                    Seamlessly connects with your existing PlayerIQ installation through secure JWT-authenticated APIs
+                                                </p>
+                                            </div>
 
-            window.addEventListener('beforeinstallprompt', (e) => {
-                e.preventDefault();
-                deferredPrompt = e;
-            });
+                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                                                <div>
+                                                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 24px;">Architecture Overview</h3>
+                                                    <ul style="list-style: none; padding: 0;">
+                                                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                                            <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">1</span>
+                                                            <div>
+                                                                <strong style="display: block; margin-bottom: 4px;">React + TypeScript Frontend</strong>
+                                                                <span style="color: var(--text-secondary);">Modern, type-safe, component-based architecture</span>
+                                                            </div>
+                                                        </li>
+                                                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                                            <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">2</span>
+                                                            <div>
+                                                                <strong style="display: block; margin-bottom: 4px;">JWT Authentication</strong>
+                                                                <span style="color: var(--text-secondary);">Secure patron authentication with refresh tokens</span>
+                                                            </div>
+                                                        </li>
+                                                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                                            <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">3</span>
+                                                            <div>
+                                                                <strong style="display: block; margin-bottom: 4px;">RESTful API Integration</strong>
+                                                                <span style="color: var(--text-secondary);">Connects to existing PlayerIQ Swagger endpoints</span>
+                                                            </div>
+                                                        </li>
+                                                        <li style="margin-bottom: 20px; display: flex; align-items: start;">
+                                                            <span style="color: var(--brand-gold); margin-right: 16px; font-size: 20px;">4</span>
+                                                            <div>
+                                                                <strong style="display: block; margin-bottom: 4px;">Azure Hosting</strong>
+                                                                <span style="color: var(--text-secondary);">Scalable cloud infrastructure with CDN</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
 
-            function installPWA() {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((choiceResult) => {
-                        if (choiceResult.outcome === 'accepted') {
-                            console.log('PWA installed');
-                        }
-                        deferredPrompt = null;
-                    });
-                } else {
-                    alert('To install: \n\nChrome/Edge: Click the install icon in the address bar\n\nSafari: Tap Share → Add to Home Screen\n\nOr this PWA may already be installed!');
-                }
-            }
+                                                <div>
+                                                    <div class="code-block">
+                                                        <code>
+                                                            // API Integration Example<br><br>
 
-            // Register service worker for PWA functionality
-            if ('serviceWorker' in navigator) {
-                // Don't register SW on the index page, only on app.html
-                console.log('Service Worker available but not registered on presentation page');
-            }
-        </script>
+                                                            const auth = {<br>
+                                                            &nbsp;&nbsp;login: '/api/auth/patron/login',<br>
+                                                            &nbsp;&nbsp;refresh: '/api/auth/patron/refresh',<br>
+                                                            &nbsp;&nbsp;register: '/api/auth/patron/register'<br>
+                                                            };<br><br>
 
-        <!-- PWA Manifest -->
-        <script>
-            const manifestData = {
-                "name": "PlayerIQ PWA Demo",
-                "short_name": "PlayerIQ",
-                "description": "Premium casino patron experience",
-                "start_url": "/",
-                "display": "standalone",
-                "background_color": "#0F0F10",
-                "theme_color": "#F7931A",
-                "orientation": "portrait",
-                "icons": [
-                    {
-                        "src": "data:image/png;base64,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",
-                        "sizes": "192x192",
-                        "type": "image/png"
-                    }
-                ]
-            };
+                                                            const patron = {<br>
+                                                            &nbsp;&nbsp;profile: '/api/patron/profile',<br>
+                                                            &nbsp;&nbsp;points: '/api/patron/points',<br>
+                                                            &nbsp;&nbsp;rewards: '/api/patron/rewards'<br>
+                                                            };<br><br>
 
-            const manifestBlob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
-            const manifestUrl = URL.createObjectURL(manifestBlob);
+                                                            // JWT Token Management<br>
+                                                            const token = await api.login(credentials);<br>
+                                                            secureStorage.set('token', token);
+                                                        </code>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
 
-            const link = document.createElement('link');
-            link.rel = 'manifest';
-            link.href = manifestUrl;
-            document.head.appendChild(link);
-        </script>
+                                    <!-- CTA Section -->
+                                    <section class="section" style="background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);">
+                                        <div class="container" style="text-align: center;">
+                                            <h2 style="font-size: 48px; font-weight: 900; margin-bottom: 24px;">
+                                                Ready to Transform Your Patron Experience?
+                                            </h2>
+                                            <p style="font-size: 20px; color: var(--text-secondary); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                                                Join the future of casino technology with PlayerIQ PWA. Increase engagement, boost loyalty, and drive revenue.
+                                            </p>
+                                            <div style="display: flex; gap: 24px; justify-content: center;">
+                                                <button onclick="window.location.href='app.html'" class="btn-gold" style="padding: 20px 40px; font-size: 18px;">
+                                                    Install Demo PWA
+                                                </button>
+                                                <a href="mailto:contact@playeriq.com" style="padding: 20px 40px; background: transparent; border: 2px solid var(--brand-gold); color: var(--brand-gold); border-radius: 12px; font-weight: 600; font-size: 18px; text-decoration: none; display: inline-block; transition: all 0.3s;">
+                                                    Contact Sales
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <!-- Footer -->
+                                    <footer style="background: var(--bg-primary); border-top: 1px solid var(--border-color); padding: 40px 0;">
+                                        <div class="container">
+                                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                                <div>
+                                                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                                                        <div style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-light) 100%); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--bg-primary); margin-right: 12px; font-size: 16px;">IQ</div>
+                                                        <span style="font-size: 18px; font-weight: 700;">PlayerIQ PWA</span>
+                                                    </div>
+                                                    <p style="color: var(--text-tertiary); font-size: 14px;">© 2025 PlayerIQ. All rights reserved.</p>
+                                                </div>
+                                                <div style="display: flex; gap: 24px;">
+                                                    <a href="#" style="color: var(--text-secondary); text-decoration: none;">Documentation</a>
+                                                    <a href="#" style="color: var(--text-secondary); text-decoration: none;">API Reference</a>
+                                                    <a href="#" style="color: var(--text-secondary); text-decoration: none;">Support</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </footer>
+
+                                    <!-- PWA Service Worker Registration -->
+                                    <script>
+                                        // Screen navigation for demo
+                                        function showScreen(screenId) {
+                                            document.querySelectorAll('.screen').forEach(screen => {
+                                                screen.classList.remove('active');
+                                            });
+                                            document.getElementById(screenId).classList.add('active');
+                                        }
+
+                                        // PWA Installation
+                                        let deferredPrompt;
+
+                                        window.addEventListener('beforeinstallprompt', (e) => {
+                                            e.preventDefault();
+                                            deferredPrompt = e;
+                                        });
+
+                                        function installPWA() {
+                                            if (deferredPrompt) {
+                                                deferredPrompt.prompt();
+                                                deferredPrompt.userChoice.then((choiceResult) => {
+                                                    if (choiceResult.outcome === 'accepted') {
+                                                        console.log('PWA installed');
+                                                    }
+                                                    deferredPrompt = null;
+                                                });
+                                            } else {
+                                                alert('To install: \n\nChrome/Edge: Click the install icon in the address bar\n\nSafari: Tap Share → Add to Home Screen\n\nOr this PWA may already be installed!');
+                                            }
+                                        }
+
+                                        // Register service worker for PWA functionality
+                                        if ('serviceWorker' in navigator) {
+                                            // Don't register SW on the index page, only on app.html
+                                            console.log('Service Worker available but not registered on presentation page');
+                                        }
+                                    </script>
+
+                                    <!-- PWA Manifest -->
+                                    <script>
+                                        const manifestData = {
+                                            "name": "PlayerIQ PWA Demo",
+                                            "short_name": "PlayerIQ",
+                                            "description": "Premium casino patron experience",
+                                            "start_url": "/",
+                                            "display": "standalone",
+                                            "background_color": "#0F0F10",
+                                            "theme_color": "#F7931A",
+                                            "orientation": "portrait",
+                                            "icons": [
+                                                {
+                                                    "src": "data:image/png;base64,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",
+                                                    "sizes": "192x192",
+                                                    "type": "image/png"
+                                                }
+                                            ]
+                                        };
+
+                                        const manifestBlob = new Blob([JSON.stringify(manifestData)], { type: 'application/json' });
+                                        const manifestUrl = URL.createObjectURL(manifestBlob);
+
+                                        const link = document.createElement('link');
+                                        link.rel = 'manifest';
+                                        link.href = manifestUrl;
+                                        document.head.appendChild(link);
+                                    </script>
     </body>
 </html>
